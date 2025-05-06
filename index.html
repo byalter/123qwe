@@ -53,15 +53,17 @@
 			     border-radius: 50%;
 			 }
 			 .tab {
-			     position: fixed;
-			     bottom: 0;
-			     z-index: 10;
-			     width: 100%;
-			     display: flex;
-			     justify-content: center;
-			     background-color: #333;
-			     padding: 10px 0;
-			     border-radius: 50px;
+			    position: fixed;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 10;
+				width: auto;
+				display: flex;
+				justify-content: center;
+				background-color: #333;
+				padding: 10px 20px;
+				border-radius: 50px;
 			 }
 
 			 .tab button {
@@ -756,6 +758,8 @@
 					</div>
 				</div>
 			</div> <!-- Теперь здесь правильно закрыт .row -->
+		</div>
+
 		<div class="tab">
 			<button
 				class="tablinks about-icon"
@@ -779,6 +783,7 @@
 				<img src="./static/money.png" alt="Контакты" />
 			</button>
 		</div>
+
 		<canvas id="particleCanvas"></canvas>
 		<audio id="aboutAudio" src="/static/gif.mp3"></audio>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
