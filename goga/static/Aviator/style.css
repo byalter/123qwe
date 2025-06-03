@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0%;
+    background: rgb(17, 17, 19);
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #ffffff;
+  }
+
+body, .container {
+  overflow: hidden; /* Применяется к телу или основному контейнеру */
+}
+
+  
+  .pers-animate {
+    position: absolute;
+    left: 0px; /* начальная позиция вне экрана */
+    top: 90px;
+    z-index: 0;
+    width: 120px;
+    height: 80px;
+    animation: flySerpentine 10s linear infinite;
+}
+
+
+
+@keyframes flySerpentine {
+  0% {
+      transform: translateX(-50vw) translateY(10vh) scaleX(1); /* Начальная точка, нормальное изображение */
+  }
+  20% {
+      transform: translateX(110vw) translateY(10vh) scaleX(1); /* Перелет в правую часть экрана */
+  }
+  40% {
+      transform: translateX(110vw) translateY(35vh) scaleX(-1); /* Разворот и небольшое опускание */
+  }
+  60% {
+      transform: translateX(-100%) translateY(35vh) scaleX(-1); /* Перелет обратно в левую часть */
+  }
+  80% {
+      transform: translateX(-100%) translateY(70vh) scaleX(1); /* Разворот и снова опускание */
+  }
+  100% {
+      transform: translateX(100vw) translateY(70vh) scaleX(1); /* Перелет в правую часть экрана */
+  }
+}
+  
+  .container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @keyframes animateErrorProgress {
+    100% {
+      background-size: 100% 100%;
+    }
+  }
+  
+  .top-content {
+    margin-top: -530px;
+    position: relative;
+    z-index: 5;
+    background: radial-gradient(circle at center, rgba(17, 17, 19, 0.8) 0%, transparent 70%);
+    padding: 20px;
+    border-radius: 50%;
+  }
+  
+  .logo-game {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8)) 
+            drop-shadow(0 0 30px rgba(255, 0, 0, 0.4))
+            brightness(1.2)
+            contrast(1.1);
+    transition: all 0.4s ease;
+    max-width: 240px;
+    transform-origin: center center;
+    animation: logoGlow 2s ease-in-out infinite alternate;
+  }
+  
+  .logo-game:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.9)) 
+            drop-shadow(0 0 40px rgba(255, 0, 0, 0.5))
+            brightness(1.3)
+            contrast(1.2);
+  }
+  
+  @keyframes logoGlow {
+    from {
+        filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8)) 
+                drop-shadow(0 0 30px rgba(255, 0, 0, 0.4))
+                brightness(1.2)
+                contrast(1.1);
+    }
+    to {
+        filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.9)) 
+                drop-shadow(0 0 40px rgba(255, 0, 0, 0.5))
+                brightness(1.3)
+                contrast(1.2);
+    }
+  }
+  
+  .name-bot {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 900;
+  }
+  
+  .print-signal {
+    font-family: 'Intro';
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 217px;
+    height: 217px;
+    background-color: #151027;
+    border: 5px solid #B41313;
+    border-radius: 50%;
+    font-size: 50px;
+    font-weight: 900;
+    transition: all .5s;
+    z-index: 2;
+  }
+  .print-signal span {
+    text-transform: uppercase;
+    font-size: 50px;
+    text-align: center;
+  }
+  .print-signal-button {
+    font-family: 'Intro';
+    color: #fff;
+    position: absolute;
+    margin-bottom: 70px;
+    display: flex; /* Добавлено для Flexbox */
+    justify-content: center; /* Центровка по горизонтали */
+    align-items: center; /* Центровка по вертикали */
+    width: 217px;
+    height: 217px;
+    background-color: #151027;
+    border: 5px solid #B41313;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 900;
+    z-index: 10;
+}
+.print-signal-button :hover{
+  scale: 0.9;
+  box-shadow: 0px 1px 2px rgba(255, 0, 0, 0.05);
+  border-radius: 30px;
+}
+
+.print-signal-button span {
+    text-transform: uppercase;
+    font-size: 33px;
+    text-align: center;
+}
+  
+  .stop-signal-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 13px;
+    width: 230px;
+    transition: all .5s;
+  }
+  
+  .stop-timer {
+    font-family: 'Intro';
+    font-size: 20px;
+    font-weight: 900;
+    height: 30px;
+  }
+  
+  .stop-progress {
+    width: 221px;
+    height: 18px;
+    background: linear-gradient(90deg, #FF0303 0%, #B4B4B4 100%) left /0% 100% no-repeat #D9D9D9;
+    border-radius: 15px;
+  }
+  
+  @keyframes animateProgress {
+    100% {
+      background-size: 100% 100%;
+    }
+  }
+  
+  .button-game {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .get-signal {
+    font-family: 'Intro';
+    position: relative;
+    width: 278px;
+    height: 56px;
+    border: none;
+    background: linear-gradient(90deg, #FF0303 0%, #B4B4B4 100%); box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all .2s;
+    z-index: 0;
+  }
+  
+  .get-signal-two {
+    font-family: 'Intro';
+    position: absolute;
+    width: 278px;
+    height: 56px;
+    border: none;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+    background: linear-gradient(90deg, #FF0303 0%, #B4B4B4 100%); box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: -1;
+    transition: all .2s;
+  }
+  
+  .game-here {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 130px;
+    height: 35px;
+    background: linear-gradient(90deg, #FE6060 0%, #828885 100%);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: all .2s;
+    z-index: 4;
+  }
+
+  .tab {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    background: none;
+    padding: 0;
+    height: auto;
+}
+
+.tab button {
+    background: linear-gradient(90deg, #B41313 0%, #FF0303 100%);
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    border-radius: 35px;
+    width: 220px;
+    height: 65px;
+    padding: 8px 25px;
+    margin: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 4px 20px rgba(180, 19, 19, 0.4);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.tab button:hover::before {
+    left: 100%;
+}
+
+.tab button:hover {
+    transform: scale(1.05) translateY(-2px);
+    background: linear-gradient(90deg, #FF0303 0%, #B41313 100%);
+    box-shadow: 0 6px 25px rgba(180, 19, 19, 0.6);
+}
+
+.tab button:active {
+    transform: scale(0.98) translateY(1px);
+}
+
+.tab button img {
+    max-width: 32px;
+    height: 32px;
+    filter: brightness(1.2) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.tab button::after {
+    content: "VOLVER";
+    color: white;
+    font-family: 'Intro', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .tab {
+        bottom: 25px;
+    }
+
+    .tab button {
+        width: 180px;
+        height: 55px;
+        padding: 8px 20px;
+    }
+    
+    .tab button img {
+        max-width: 28px;
+        height: 28px;
+    }
+    
+    .tab button::after {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab {
+        bottom: 20px;
+    }
+
+    .tab button {
+        width: 160px;
+        height: 50px;
+        padding: 8px 15px;
+    }
+    
+    .tab button img {
+        max-width: 24px;
+        height: 24px;
+    }
+    
+    .tab button::after {
+        font-size: 16px;
+    }
+}
+  
+  .get-signal::before, .game-here::before, .get-signal-two::before{
+    content: "";
+    position: absolute;
+    inset: 0px;
+    z-index: -1;
+    background: linear-gradient(90deg, #FF0303 0%, #B4B4B4 100%); box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    filter: blur(10px);
+    border-radius: 30px;
+  }
+  
+  .print-signal-button:active, .game-here:active, .get-signal-two:active{
+    transform: scale(90%);
+  }
+  
+  .deactivate {
+    opacity: 0;
+  }
+  
