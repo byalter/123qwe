@@ -157,3 +157,9 @@ numButtons.forEach(button => {
         updateTrapCountDisplay();
     });
 });
+
+// Кнопка "Вернуться в меню"
+const backButton = document.getElementById('back-btn');
+backButton?.addEventListener('click', () => {
+    window.history.back();
+});

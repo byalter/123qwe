@@ -228,3 +228,23 @@ body {
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0, 85, 196, 0.4); /* Тень при наведении */
 }
+
+#back-btn {
+    font-family: "Intro", Arial, sans-serif;
+    background-color: #ce0000; /* Сделаем отличающийся цвет (серый), но можно любой */
+    color: white;
+    font-size: 20px;
+    padding: 12px 40px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 5px;
+}
+
+#back-btn:hover {
+    background-color: #222;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
